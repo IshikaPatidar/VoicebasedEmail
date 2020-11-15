@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lan="en" ng-app="voiceCommands">
+<head>
+  <title>Home</title>
+    <meta charset="utf-8" >
+  <meta name="viewport" content="width=device-width , initial-scale=1.0 ,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.9/angular.min.js"></script>
+   <script type="text/javascript" src="voice-commands.min.js"></script>
+  <script type="text/javascript" src="voice-commands.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/card.css">
+
+</head>
+
+<!-- <body style="background-image: url('p1.jpg'); width:100%;height:100%;" onclick="javascript:speakText()"  > -->
+  <!-- <body  onclick="javascript:speakText()"  > -->
+    <body ng-controller="demopage" onmouseup ="speakText(); this.onclick=null;">
+
+<h1 ng-if="step > 0" class="step" ></h1>
+
+<script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+
+ <script type="text/javascript">
+  
+  function speakText(){
+    responsiveVoice.speak("welcome to bling! want to login or create a new account. Say login if you are already member or say sign up for registration");
+    // alert('successful');
+  }
+
+  
+</script>
+<!-- <body> -->
+  <div class="container">
+    <a style="font-size: 50px; font-weight: bold; color:#F9F6EB;text-decoration: none" class="pull-left" ><img style="display: inline-block; margin: 0px 150px 20px 0px;" src="logo2.png" width="160px" height="70px">WELCOME TO BLING</a> 
+    <!-- <h1 ng-if="step > 0" class="step">Say</h1> -->
+  </div>
+
+ 
+<div class="container" >
+ 
+  <!-- <h1 >WELCOME TO BLING</h1>  -->
+  <!-- <br> -->
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      
+   <div class="card shadow" style="width: 20rem;">
+  <div class="inner">
+  <img src="img/stock4.jpeg" class="card-img-top" alt="card image cap">
+</div>
+  <div class="card-body ytext-center">
+    <h5 class="card-title">LOGIN</h5>
+    <p class="card-text" ng if="step > 0">ALREADY A MEMBER?<br>SIGN IN TO GET STARTED!!<br>CLICK HERE..</p>
+    <a href="../Login_v15/Login_v15/index.html" class="btn btn-success">LOGIN</a>
+  </div>
+</div>
+    </div>
+
+    <div class="col-md-4">   
+      <div class="card shadow" style="width: 20rem;">
+        <div class="inner">
+  <img src="img/stock3.jpeg" class="card-img-top" alt="card image cap">
+</div>
+  <div class="card-body ytext-center">
+    <h5 class="card-title">SIGN UP</h5>
+    <p class="card-text">MANAGE YOUR E-MAILS EFFORTLESSLY BY YOUR VOICE<BR>SIGN UP TO BEGIN!!</p>
+    <a href="../colorlib-regform-1\colorlib-regform-1" class="btn btn-success">SIGN UP</a>
+     </div>
+    </div>
+  </div>
+</div>
+
+<h1 ng-if="step > 0" class="step" ></h1>
+</body>
+<script>
+'use strict';
+angular.module('voiceCommands', [])
+.controller('demopage', function($scope, $timeout) {
+  $scope.step = 0;
+  $scope.results = [];
+  SPEECH.addVoiceCommands([
+    {
+  
+      command: 'sign up',
+      callback: function() {
+              if($scope.step > 0){
+             window.location.href = '../colorlib-regform-1/colorlib-regform-1/index.html';
+             $scope.step++;
+       } 
+      }
+    },
+    {
+    command :'login',
+     callback: function() {
+              if($scope.step > 0){
+             window.location.href = '../Login_v15/Login_v15/index.html';
+           }
+         }
+       }
+
+  ]);
+  SPEECH.onStart(function() {
+    $timeout(function() {
+      $scope.step = 1;
+    });
+  });
+  SPEECH.onResult(function(result) {
+    $timeout(function() {
+      if ($scope.step === 1) {
+        $scope.name = result.transcript;
+        $scope.step = 2;
+      }
+      $scope.results.push(result);
+    });
+  });
+  SPEECH.start({
+    min_confidence: .2
+  });
+});
+
+</script>
+
+</html>

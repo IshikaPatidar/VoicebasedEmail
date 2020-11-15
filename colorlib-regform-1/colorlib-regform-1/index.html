@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Registration</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body onclick="speakText(); this.onclick=null;">
+
+
+  <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+ <script type="text/javascript">
+  
+  function speakText(){
+    responsiveVoice.speak("Enter your first name ");
+    // alert('successful');
+  }
+
+  function speakText1(){
+    responsiveVoice.speak("Enter your last name");
+    // alert('successful');
+  }
+function textspeak() {
+  setTimeout(function(){speakText1();}, 7000);
+}
+// --------------------
+ function speakText2(){
+    responsiveVoice.speak("Enter your date of birth");
+
+  }
+function textspeak1() {
+  setTimeout(function(){speakText2();}, 7000);
+}
+// ---------------------
+ function speakText3(){
+    responsiveVoice.speak("enter your gender");
+ 
+  }
+function textspeak2() {
+  setTimeout(function(){speakText3();}, 7000);
+}
+// -------------------
+ function speakText4(){
+    responsiveVoice.speak("enter your email");
+    
+  }
+function textspeak3() {
+  setTimeout(function(){speakText4();}, 7000);
+}
+  // ----------------
+function textspeak4() {
+  setTimeout(function(){speakText5();}, 7000);
+}
+   function speakText5(){
+    responsiveVoice.speak("enter your password");
+    
+  }
+</script>
+
+
+
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+                    <form action="register.php" method="POST" id="labnol">
+                        <div class="input-group">
+                            <input id="f1" class="input--style-1" type="text" placeholder="FIRST NAME" name="fname"  onclick="myFunction();textspeak();startDictation();" autofocus="autofocus">
+                        </div>
+                        <div class="input-group">
+                            <input id="f2" class="input--style-1" type="text" placeholder="LAST NAME" name="lname" onclick="startDictation1();textspeak1(); myFunction1();">
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1 js-datepicker" type="text" id="f5" placeholder="BIRTHDATE" name="dob" onclick="startDictation5();myFunction3();textspeak2();">
+                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                       <input class="input--style-1" type="text" name="gender" id="f6" placeholder="GENDER" onclick="startDictation6();myFunction4();textspeak3();">
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                
+                                <div class="input-group">
+                                    <input id="f3" class="input--style-1" type="text" placeholder="EMAIL" name="email" onclick="startDictation3(); myFunction2();textspeak4();">
+                                </div>
+                         
+                      
+                                <div class="input-group">
+                                    <input id="f4" class="input--style-1" type="password" placeholder="PASSWORD" name="password" onclick="startDictation4();">
+                                </div>
+                            
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+
+<script >
+
+        function myFunction() {
+  setTimeout(function(){hello();}, 7000);
+}
+
+
+function hello(){
+ document.getElementById('f2').focus();
+
+}
+// -----------------------
+        function myFunction1() {
+  setTimeout(function(){hello1();}, 7000);
+}
+
+
+function hello1(){
+ document.getElementById('f5').focus();
+
+}
+    // ----------------------
+            function myFunction2() {
+  setTimeout(function(){hello2();}, 7000);
+}
+
+
+function hello2(){
+ document.getElementById('f4').focus();
+
+}
+
+
+// -----------------
+           function myFunction3() {
+  setTimeout(function(){hello3();}, 7000);
+}
+
+
+function hello3(){
+ document.getElementById('f6').focus();
+
+}
+
+
+// -------------------
+           function myFunction4() {
+  setTimeout(function(){hello4();}, 7000);
+}
+
+
+function hello4(){
+ document.getElementById('f3').focus();
+
+}
+
+// -----------------------
+  function startDictation() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('f1').value = e.results[0][0].transcript;
+        recognition.stop();
+        
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+
+  function startDictation1() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('f2').value = e.results[0][0].transcript;
+       recognition.stop();
+       
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+   function startDictation5() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('f5').value = e.results[0][0].transcript.replace(/ /g,'');
+       recognition.stop();
+        
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+
+   function startDictation6() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('f6').value = e.results[0][0].transcript;
+       recognition.stop();
+        
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+
+   function startDictation3() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('f3').value = e.results[0][0].transcript.replace(/ /g,'');
+       recognition.stop();
+        
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+
+   function startDictation4() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('f4').value = e.results[0][0].transcript;
+       recognition.stop();
+        document.getElementById('labnol').submit();
+      };
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+  
+</script>
+
+
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

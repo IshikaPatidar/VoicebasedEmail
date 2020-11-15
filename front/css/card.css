@@ -1,0 +1,43 @@
+.container{
+  margin-top: 5%;
+
+
+}
+.inner{
+  overflow: hidden; 
+}
+.inner img{
+ 
+  transition: all 1.5s ease;
+}
+.inner:hover img{
+  transform: scale(1.5);
+}
+  .step {
+  zoom: .6;
+  border-bottom: 1px solid #ccc;
+  opacity: .5;
+}
+.step:first-child {
+  zoom: 1;
+  opacity: 1;
+}
+.step:last-child {
+  border-bottom: none;
+}
+
+body{
+  background-image: url('1.jpeg');
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+h1{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-family: "Times new roman";
+}
